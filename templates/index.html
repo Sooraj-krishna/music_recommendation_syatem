@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion-Based Music Recommender</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#signup">Sign Up</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Easiest Way to Listen to your Favorite Music!</h1>
+            <p>Enjoy music anytime with facial detection recommendations. Access millions of songs and find tracks that match your mood. Your next favorite tune is just a tap away!</p>
+            <a href="#scanner-section" class="cta-button">Get Started</a>
+        </div>
+        <div class="hero-image">
+            <img src="/static/images/headphone.png" alt="Headphones">
+        </div>
+    </section>
+
+    <section class="scanner-section" id="scanner-section">
+        <div class="scanner-container">
+            <div class="scanner-content">
+                <h2>Discover Music Based on Your Mood</h2>
+                <p>Our advanced AI technology analyzes your facial expressions to recommend the perfect playlist that matches your current mood. Try it now!</p>
+                <button class="scan-button" onclick="openCamera()">Scan Your Face</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="scannerModal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal()">&times;</button>
+            <div class="camera-container">
+                <video id="videoElement" autoplay playsinline></video>
+            </div>
+            <div class="button-group">
+                <button onclick="captureImage()" class="scan-button">Scan</button>
+                <button onclick="resetScan()" class="scan-button">Rescan</button>
+                <button onclick="submitScan()" class="scan-button">Submit</button>
+            </div>
+            <div id="emotion-result"></div>
+        </div>
+    </div>
+
+    <div class="loading-indicator">
+        <div class="spinner"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Emotion-Based Music Recommender. All rights reserved.</p>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
